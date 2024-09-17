@@ -53,19 +53,13 @@ const server = createServer((req, res) => {
           }else if (req.url === '/about') {
             res.writeHead(405, { 'Content-Type': 'text/plain' });
             res.end('Method Not Allowed');
+          }else {
+            res.writeHead(404, { 'Content-Type': 'text/plain' });
+            res.end('Route Not Found');
           }
           
-          
-          
-          
-          
-          
-          
-          
-          
-
-      
-});
+        }
+    );
 
 
 
