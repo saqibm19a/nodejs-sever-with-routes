@@ -36,7 +36,16 @@ const server = createServer((req, res) => {
           }else if (req.method === 'GET' && req.url === '/about') {
             res.writeHead(200, { 'Content-Type': 'text/plain' });
             res.end('This is the About page!');
+          }else if (req.method === 'POST' && req.url === '/about') {
+            let body = '';
+            req.on('data', chunk => { body += chunk.toString(); });
+            req.on('end', () => {
+              console.log('Received POST data:', body);
+              res.writeHead(200, { 'Content-Type': 'text/plain' });
+              res.end('POST request received at About page!');
+            });
           }
+          
           
           
           
