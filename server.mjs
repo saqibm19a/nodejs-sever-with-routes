@@ -47,7 +47,11 @@ const server = createServer((req, res) => {
           }else if (req.method === 'PUT' && req.url === '/about') {
             res.writeHead(200, { 'Content-Type': 'text/plain' });
             res.end('PUT request received at About page!');
+          }else if (req.method === 'DELETE' && req.url === '/about') {
+            res.writeHead(200, { 'Content-Type': 'text/plain' });
+            res.end('DELETE request received at About page!');
           }
+          
           
           
           
