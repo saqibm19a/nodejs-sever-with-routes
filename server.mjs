@@ -30,7 +30,11 @@ const server = createServer((req, res) => {
           }else if (req.method === 'DELETE' && req.url === '/') {
             res.writeHead(200, { 'Content-Type': 'text/plain' });
             res.end('DELETE request received at homepage!');
+          }else if (req.url === '/') {
+            res.writeHead(405, { 'Content-Type': 'text/plain' });
+            res.end('Method Not Allowed');
           }
+          
           
           
           
