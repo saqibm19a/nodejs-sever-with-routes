@@ -33,7 +33,11 @@ const server = createServer((req, res) => {
           }else if (req.url === '/') {
             res.writeHead(405, { 'Content-Type': 'text/plain' });
             res.end('Method Not Allowed');
+          }else if (req.method === 'GET' && req.url === '/about') {
+            res.writeHead(200, { 'Content-Type': 'text/plain' });
+            res.end('This is the About page!');
           }
+          
           
           
           
