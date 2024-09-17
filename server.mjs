@@ -44,7 +44,11 @@ const server = createServer((req, res) => {
               res.writeHead(200, { 'Content-Type': 'text/plain' });
               res.end('POST request received at About page!');
             });
+          }else if (req.method === 'PUT' && req.url === '/about') {
+            res.writeHead(200, { 'Content-Type': 'text/plain' });
+            res.end('PUT request received at About page!');
           }
+          
           
           
           
